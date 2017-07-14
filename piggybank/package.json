@@ -1,7 +1,7 @@
 {
   "name": "piggybank",
   "version": "1.0.0",
-  "description": "Piggybank is to inspire children (age 10-14) to start to see the importance of saving money.Through the power of saving we set out to empower children to financial literacy at an early age",
+  "description": "Piggybank is to inspire children (age 10-14) see the importance of saving money.Through the power of saving we set out to empower children to financial literacy at an early age",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
