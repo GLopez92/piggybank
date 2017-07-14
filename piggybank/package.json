@@ -1,0 +1,26 @@
+{
+  "name": "piggybank",
+  "version": "1.0.0",
+  "description": "Piggybank is to inspire children (age 10-14) to start to see the importance of saving money.Through the power of saving we set out to empower children to financial literacy at an early age",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -w"
+  },
+  "author": "Guillermo Lopez, Ebony Davis, Andy Scott, Garren Byrd",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "react-router": "^2.4.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.3.13",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "jquery": "^3.2.1",
+    "webpack": "^1.13.1",
+    "webpack-bundle-tracker": "^0.2.0"
+  }
+}
