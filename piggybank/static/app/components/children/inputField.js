@@ -1,5 +1,6 @@
 import React from 'react';
 import EventEmitter from 'events';
+import ContentEditable from './contentEditable';
 
 const eventEmitter  = new EventEmitter();
 
@@ -9,7 +10,7 @@ class InputField extends React.Component {
     this.state = {
       term: ""
     };
-    return {text: this.props.text};
+    // return {text: this.props.text};
   }
   _updateField(newStr) {
     newStr = newStr.split ? newStr.split(' ').reverse().join(' ') : newStr;

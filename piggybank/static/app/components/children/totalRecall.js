@@ -1,5 +1,6 @@
 import React from 'react';
 import EventEmitter from 'events';
+import store from '../utils/store'
 
 const eventEmitter  = new EventEmitter();
 
@@ -9,8 +10,10 @@ class TotalRecall extends React.Component {
     this.state = {
       term: ""
     };
-    return {show: false}
+    // Returning out of the constructor prevents any of the other methods from being set, so you should avoid doing that.
+    // return {show: false}
   }
+
   _toggleMemories() {
     this.setState({show: !this.state.show});
   }
@@ -29,10 +32,10 @@ class TotalRecall extends React.Component {
     
     return (
       <section className={classNames}>
-        <button text="+" clickHandler={this._toggleMemories} class="toggle-close" />
+        <button text="+" clickHandler={this._toggleMemories} className="toggle-close" />
         {store.curMemories.map((mem) => {
           return (
-            <button class="block memory transparent" text={mem} clickHandler={this._recallMemory} />
+            <button className="block memory transparent" text={mem} clickHandler={this._recallMemory} />
           );
         })}
       </section>

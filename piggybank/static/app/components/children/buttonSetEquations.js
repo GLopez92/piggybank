@@ -3,7 +3,7 @@ import EventEmitter from 'events';
 
 const eventEmitter  = new EventEmitter();
 
-class buttonSetEquations extends React.Component {
+class ButtonSetEquations extends React.Component {
 
   constructor(props) {
     super(props);
@@ -28,4 +28,4 @@ class buttonSetEquations extends React.Component {
   }
 };
 
-export default buttonSetEquations;
+export default ButtonSetEquations;

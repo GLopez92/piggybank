@@ -2,13 +2,15 @@ from django.http import Http404, HttpResponse
 
 from django.shortcuts import redirect, render
 
+from django.views.decorators.csrf import csrf_exempt
+
 from .forms import UserForm
 
 from .models import User
 
 # Create your views here.
 
-
+@csrf_exempt
 def index(request):
     if request.method == 'POST':
         form = UserForm(request.POST)
@@ -28,9 +30,11 @@ def index(request):
         context = { 'header' : 'GET', 'form' : UserForm() }
         return render(request, 'users/index.html', context)
 
+@csrf_exempt
 def account(request):
 	return render(request, 'users/account.html')
 
+@csrf_exempt
 def signIn(request):
     if request.method == 'POST':
         form = UserForm(request.POST)
