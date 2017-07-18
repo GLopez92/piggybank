@@ -4,9 +4,9 @@ import EventEmitter from 'events';
 const eventEmitter  = new EventEmitter
 
 import button from "./children/button.js";
-import buttonSetEquations from "./children/buttonSetEquations.js";
-import buttonSetFunctions from "./children/buttonSetFunctions.js";
-import buttonSetNumbers from "./children/buttonSetNumbers.js";
+import ButtonSetEquations from "./children/buttonSetEquations.js";
+import ButtonSetFunctions from "./children/buttonSetFunctions.js";
+import ButtonSetNumbers from "./children/buttonSetNumbers.js";
 import ContentEditable from "./children/contentEditable.js";
 import InputField from "./children/inputField.js";
 import TotalRecall from "./children/totalRecall.js";
@@ -14,18 +14,21 @@ import TotalRecall from "./children/totalRecall.js";
 import store from "./utils/store";
 
 
-class reactCalculator extends React.Component {
-  render() {    
+// class ReactCalculator extedn
+
+class ReactCalculator extends React.Component {
+  render() {
     return (
-      <main className="react-calculator">
+      <div className="react-calculator">
+        <h1>Hello, world</h1>
         <InputField />
+        <ButtonSetNumbers />
         <TotalRecall />
-        <buttonSetNumbers />
-        <buttonSetFunctions />
-        <buttonSetEquations />      
-      </main>
+        <ButtonSetFunctions />
+        <ButtonSetEquations />      
+      </div>
     )
   }
 };
 
-export default reactCalculator;
+export default ReactCalculator;
