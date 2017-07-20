@@ -3,7 +3,7 @@ import EventEmitter from 'events';
 
 const eventEmitter  = new EventEmitter();
 
-const store = {
+const Store = {
   input: 0,
   memory: [],
   get curInput() {
@@ -31,4 +31,4 @@ const store = {
   }
 };
 
-export default store;
+export default Store;

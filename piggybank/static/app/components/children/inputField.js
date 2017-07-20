@@ -22,7 +22,7 @@ class InputField extends React.Component {
   }
   
   render() {    
-    return <ContentEditable text={this.state.text} initEdit="false" spellcheck="false" clickHandler={this._clickBait} />
+    return <div className="ContentEditable" text={this.state.text} initEdit="false" spellcheck="false" clickHandler={this._clickBait} />
   }
 };
 

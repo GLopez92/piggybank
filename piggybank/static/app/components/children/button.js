@@ -3,7 +3,7 @@ import EventEmitter from 'events';
 
 const eventEmitter  = new EventEmitter();
 
-class button  extends React.Component {
+class Button  extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,4 +29,4 @@ class button  extends React.Component {
   }
 };
 
-export default button;
+export default Button;

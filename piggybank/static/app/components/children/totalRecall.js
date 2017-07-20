@@ -1,6 +1,6 @@
 import React from 'react';
 import EventEmitter from 'events';
-import store from '../utils/store'
+import Store from '../utils/store';
 
 const eventEmitter  = new EventEmitter();
 
