@@ -1,7 +1,7 @@
 import React from 'react';
-import EventEmitter from 'events';
+import { EventEmitter } from 'events';
 
-const eventEmitter  = new EventEmitter();
+const eventEmitter  = require('./eventEmitter');
 
 
 class ContentEditable extends React.Component {
@@ -20,7 +20,7 @@ class ContentEditable extends React.Component {
   
   render() {
     return (
-      <div className="editable-field" contentEditable={this.props.initEdit} spellcheck={this.props.spellCheck} onClick={this._handleClick}>
+      <div className="editable-field" contentEditable={this.props.initEdit} spellCheck={this.props.spellCheck} onClick={this._handleClick}>
         {this.props.text}
       </div>
     )

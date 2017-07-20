@@ -1,30 +1,33 @@
 import React from 'react';
-import EventEmitter from 'events';
+import { EventEmitter  }from 'events';
 import Store from '../utils/store';
+import Button from './button';
 
-const eventEmitter  = new EventEmitter();
+const eventEmitter  = require('./eventEmitter');
 
 class TotalRecall extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      term: ""
+      term: "",
+      show: false
     };
-    // Returning out of the constructor prevents any of the other methods from being set, so you should avoid doing that.
-    // return {show: false}
   }
 
   _toggleMemories() {
+    console.log(this)
     this.setState({show: !this.state.show});
+
   }
   
   _recallMemory(memory) {
-    store.newInput = memory;
+    console.log(memory);
+    Store.newInput = memory;
     eventEmitter.emitEvent('toggle-memories');
   }
   
   componentWillMount() {
-    eventEmitter.addListener('toggle-memories', this._toggleMemories);
+    eventEmitter.addListener('toggle-memories', this._toggleMemories.bind(this));
   }
   
   render() {
@@ -32,10 +35,10 @@ class TotalRecall extends React.Component {
     
     return (
       <section className={classNames}>
-        <button text="+" clickHandler={this._toggleMemories} className="toggle-close" />
-        {store.curMemories.map((mem) => {
+        <Button text="Add to Record" clickHandler={this._toggleMemories.bind(this)} className="toggle-close" />
+        {Store.curMemories.map((mem) => {
           return (
-            <button className="block memory transparent" text={mem} clickHandler={this._recallMemory} />
+            <Button className="block memory transparent" text={mem} clickHandler={this._recallMemory.bind(this)} />
           );
         })}
       </section>

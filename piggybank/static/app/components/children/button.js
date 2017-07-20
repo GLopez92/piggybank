@@ -1,30 +1,41 @@
 import React from 'react';
-import EventEmitter from 'events';
+import { EventEmitter } from 'events';
+import InputField from './inputField'
 
-const eventEmitter  = new EventEmitter();
+
+const eventEmitter  = require('./eventEmitter');;
 
 class Button  extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      term: ""
+      term: "",
+      visbility: true
     };
   }
 
   _handleClick() {
+    console.log('PROPS: ', this.props);
+    
     let text = this.props.text,
         cb = this.props.clickHandler;
+
     
     if (cb) {
       cb.call(null, text);
     }
+
+    this.state.visbility = false
   }
+
   
   render() {
     return (
-      <button className={this.props.class} onClick={this._handleClick}>
-        <span className="title">{this.props.text}</span>
-      </button>
+    <div> 
+      <button className={this.props.class} onClick={this._handleClick.bind(this)}>
+        {this.props.text}
+      </button> 
+    </div>
     );
   }
 };

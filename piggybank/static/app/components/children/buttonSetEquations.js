@@ -1,8 +1,9 @@
 import React from 'react';
 import EventEmitter from 'events';
-// import Store from "./utils/store";
+import Button from './button'
+import Store from "../utils/store";
 
-const eventEmitter  = new EventEmitter();
+const eventEmitter  = require('./eventEmitter');
 
 class ButtonSetEquations extends React.Component {
 
@@ -11,19 +12,19 @@ class ButtonSetEquations extends React.Component {
   }
 
   _eq(type) {
-    store.newInput = `${store.curInput} ${type} `;
+    Store.newInput = `${Store.curInput} ${type} `;
   }
   
   _equate() {
-    store.newInput = eval(store.curInput);
+    Store.newInput = eval(Store.curInput);
   }
   
   render() {
     return (
       <section className="button-set--equations">
-        <button text="+" clickHandler={this._eq} />
-        <button text="-" clickHandler={this._eq} />
-        <button text="Enter" clickHandler={this._equate} />
+        <Button text="+" clickHandler={this._eq} />
+        <Button text="-" clickHandler={this._eq} />
+        <Button text="Enter" clickHandler={this._equate} />
       </section>
     )  
   }

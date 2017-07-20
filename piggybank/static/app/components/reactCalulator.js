@@ -1,5 +1,7 @@
 import React from 'react';
-import EventEmitter from 'events';
+import { EventEmitter } from 'events';
+// var EventEmitter = require('events').EventEmitter
+
 
 const eventEmitter  = new EventEmitter
 

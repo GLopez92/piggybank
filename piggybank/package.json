@@ -10,6 +10,8 @@
   "author": "Guillermo Lopez, Ebony Davis, Andy Scott, Garren Byrd",
   "license": "ISC",
   "dependencies": {
+    "events": "^1.1.1",
+    "lodash": "^4.17.4",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
     "react-router": "^2.4.1"

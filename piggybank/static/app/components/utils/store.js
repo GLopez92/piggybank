@@ -1,7 +1,8 @@
 import React from 'react';
-import EventEmitter from 'events';
+// import { EventEmitter } from 'events';
+const events = require('events')
 
-const eventEmitter  = new EventEmitter();
+const eventEmitter  = require('../children/eventEmitter');
 
 const Store = {
   input: 0,
@@ -18,16 +19,20 @@ const Store = {
     this.memory.push(input);
   },
   
-  set newInput(str) {    
+  set newInput(str) { 
+
     let curInput = str,
       oldInput = this.curInput;
+   
     
     if (this.curMemories.indexOf(oldInput) === -1) {
       this.commitMemory = oldInput;
     }
     
     this.input = curInput;
-    eventEmitter.emitEvent('numberCruncher', [this.curInput]);
+    eventEmitter.emit('numberCruncher', [this.curInput]);
+
+    console.log(this.curInput);
   }
 };
 

@@ -1,8 +1,9 @@
 import React from 'react';
-import EventEmitter from 'events';
-// import Store from "./utils/store";
+import { EventEmitter } from 'events';
+import Store from "../utils/store";
+import Button from './button';
 
-const eventEmitter  = new EventEmitter();
+const eventEmitter  = require('./eventEmitter');
 
 class ButtonSetNumbers  extends React.Component {
 
@@ -11,26 +12,26 @@ class ButtonSetNumbers  extends React.Component {
   }
 
   _number(num) {
-    if (!store.curInput) {
-      return store.newInput = num;
+    if (!Store.curInput) {
+      return Store.newInput = num;
     }
     
-    return store.newInput = `${store.curInput}${num}`;
+    return Store.newInput = `${Store.curInput}${num}`;
   }
  
   render() {
     return (
       <section className="button-set--numbers">
-        <button text="1" clickHandler={this._number} />
-        <button text="2" clickHandler={this._number} />
-        <button text="3" clickHandler={this._number} />
-        <button text="4" clickHandler={this._number} />
-        <button text="5" clickHandler={this._number} />
-        <button text="6" clickHandler={this._number} />
-        <button text="7" clickHandler={this._number} />
-        <button text="8" clickHandler={this._number} />
-        <button text="9" clickHandler={this._number} />
-        <button text="0" clickHandler={this._number} />
+        <Button text="1" clickHandler={this._number} />
+        <Button text="2" clickHandler={this._number} />
+        <Button text="3" clickHandler={this._number} />
+        <Button text="4" clickHandler={this._number} />
+        <Button text="5" clickHandler={this._number} />
+        <Button text="6" clickHandler={this._number} />
+        <Button text="7" clickHandler={this._number} />
+        <Button text="8" clickHandler={this._number} />
+        <Button text="9" clickHandler={this._number} />
+        <Button text="0" clickHandler={this._number} />
       </section>
     )
   }

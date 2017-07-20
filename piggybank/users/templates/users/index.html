@@ -82,19 +82,15 @@
     <p class="lead">Sign up and start saving!</p>
     <hr class="my-4">
 <form class="form-group" action="/index/" method="post">
-     
-    {% csrf_token %}
-        <label for="exampleInputEmail1"><strong>Username</strong></label>
-        <div class="inputBoxes">
-        <input type="text" class="form-control userNameTextBox" id="userName" placeholder="Enter your username here">
-            <!-- username error message -->
-            <div id="error-prompt"> </div>
-            <!-- username error message -->
-        <label for="email"><strong>Email</strong></label>
-        <input type="text" class="form-control" id="exampleInputWeight" placeholder="Please enter an email address">
-        <label for="exampleInputPassword1"><strong>Password</strong></label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        <input type="submit" value="Submit">
+
+        {% for field in form %}
+        <div class="form-group">
+            {{ field.errors }}
+
+            {{ field.label_tag }} {{ field }}
+        </div>
+      {% endfor %}
+    <button type="submit" class="btn btn-primary">Submit</button>
          
 </form>
     
@@ -166,7 +162,5 @@ $(document).ready(function () {
     });
     
 </script>
-<div id="app"></div>
-<script type="text/javascript" src="/static/bundle.js"></script>
 </body>
 </html>
