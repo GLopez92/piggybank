@@ -16,13 +16,15 @@ import TotalRecall from "./children/totalRecall.js";
 import store from "./utils/store";
 
 
+
 // class ReactCalculator extedn
 
 class ReactCalculator extends React.Component {
   render() {
     return (
       <div className="react-calculator">
-        <h1>Hello, world</h1>
+        <h3>Guillermo's PiggyBank</h3>
+        <h1>Account Balance: $100</h1>
         <InputField />
         <ButtonSetNumbers />
         <TotalRecall />

@@ -4,9 +4,15 @@ from django.shortcuts import redirect, render
 
 from django.views.decorators.csrf import csrf_exempt
 
+from django.views import generic
+
 from .forms import UserForm
 
 from .models import User
+
+from .serializers import UserSerializer
+
+from rest_framework.views import APIView
 
 # Create your views here.
 
@@ -29,6 +35,11 @@ def index(request):
         # If the user sends a GET request...
         context = { 'header' : 'GET', 'form' : UserForm() }
         return render(request, 'users/index.html', context)
+
+class UserList(APIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
 
 @csrf_exempt
 def account(request):

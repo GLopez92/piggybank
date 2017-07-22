@@ -31,7 +31,7 @@ class Button  extends React.Component {
   
   render() {
     return (
-    <div> 
+    <div>
       <button className={this.props.class} onClick={this._handleClick.bind(this)}>
         {this.props.text}
       </button> 

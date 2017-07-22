@@ -16,8 +16,15 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+# from rest_framework.urlpatterns import format_suffix_patterns
+
+from users import views
+
+
 app_name = 'users'
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('users.urls')),
 ]
+
+# urlpatterns = format_suffix_patterns(urlpatterns)

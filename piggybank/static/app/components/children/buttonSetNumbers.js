@@ -22,16 +22,39 @@ class ButtonSetNumbers  extends React.Component {
   render() {
     return (
       <section className="button-set--numbers">
-        <Button text="1" clickHandler={this._number} />
-        <Button text="2" clickHandler={this._number} />
-        <Button text="3" clickHandler={this._number} />
-        <Button text="4" clickHandler={this._number} />
-        <Button text="5" clickHandler={this._number} />
-        <Button text="6" clickHandler={this._number} />
-        <Button text="7" clickHandler={this._number} />
-        <Button text="8" clickHandler={this._number} />
-        <Button text="9" clickHandler={this._number} />
-        <Button text="0" clickHandler={this._number} />
+      
+        <div className="row">
+            <div className="col-md-1">
+            <Button text="1" clickHandler={this._number} />
+          </div>
+          <div className="col-md-1">
+            <Button text="2" clickHandler={this._number} />
+          </div>
+          <div className="col-md-1">
+            <Button text="3" clickHandler={this._number} />
+          </div>
+          <div className="col-md-1">
+            <Button text="4" clickHandler={this._number} />
+          </div>
+          <div className="col-md-1">
+            <Button text="5" clickHandler={this._number} />
+          </div>
+          <div className="col-md-1">
+            <Button text="6" clickHandler={this._number} />
+          </div>
+          <div className="col-md-1">
+            <Button text="7" clickHandler={this._number} />
+          </div>
+          <div className="col-md-1">
+            <Button text="8" clickHandler={this._number} />
+          </div>
+          <div className="col-md-1">
+            <Button text="9" clickHandler={this._number} />
+          </div>
+          <div className="col-md-1">
+            <Button text="0" clickHandler={this._number} />
+          </div>
+        </div>
       </section>
     )
   }

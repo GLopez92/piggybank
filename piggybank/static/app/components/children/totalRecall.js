@@ -23,7 +23,7 @@ class TotalRecall extends React.Component {
   _recallMemory(memory) {
     console.log(memory);
     Store.newInput = memory;
-    eventEmitter.emitEvent('toggle-memories');
+    eventEmitter.emit('toggle-memories');
   }
   
   componentWillMount() {
@@ -35,7 +35,7 @@ class TotalRecall extends React.Component {
     
     return (
       <section className={classNames}>
-        <Button text="Add to Record" clickHandler={this._toggleMemories.bind(this)} className="toggle-close" />
+        <Button text="recall" clickHandler={this._toggleMemories.bind(this)} className="toggle-close" />
         {Store.curMemories.map((mem) => {
           return (
             <Button className="block memory transparent" text={mem} clickHandler={this._recallMemory.bind(this)} />
